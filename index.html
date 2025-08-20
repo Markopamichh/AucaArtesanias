@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auca Artesanías</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="styles/style.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Auca Artesanias</a>
+            <nav class="nav-menu">
+                <a href="#home">Inicio</a>
+                <a href="#catalog">Catalogo</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content animate__animated animate__fadeInUp">
+            <h1>Hecho a Mano con Amor</h1>
+            <p>Descubre piezas artesanales únicas que cuentan una historia</p>
+            <a href="#catalog" class="cta-button">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about animate__animated animate__fadeInUp">
+        <div class="about-content">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos artesanos apasionados dedicados a preservar la artesanía tradicional mientras creamos piezas únicas y hermosas para tu hogar. Cada pieza está cuidadosamente elaborada a mano con atención al detalle y amor por nuestro oficio.</p>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="catalog" class="featured-products">
+        <h2 class="animate__animated animate__fadeIn">Productos Destacados</h2>
+        <div class="products-grid animate__animated animate__fadeInUp animate__delay-1s" id="products-container">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container animate__animated animate__fadeInUp">
+            <div class="contact-info">
+                <h2 class="animate__animated animate__fadeIn">Contáctanos</h2>
+                <p><i class="fas fa-phone"></i> Teléfono: (299) 612-0756</p>
+                <p><i class="fas fa-envelope"></i> Email: artesaniasauca@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Horario: Lun-Vie 9hs-18hs</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://mail.google.com/mail/u/4/#inbox?compose=GTvVlcRwRfDXNvBnTJRcCBFZvmbLDgPwGPhKCmrnmrKkHrPcbSmXxWPjglwbCTbvsPCJdPcCsZCJH"><i class="fab fa-email"></i>email</a>
+                    
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="name" id="name" placeholder="Nombre" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <textarea name="message" id="message" placeholder="Mensaje" rows="5" required></textarea>
+                <button type="button" class="cta-button" onclick="sendEmail()">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-header">
+            <h2>Carrito de Compras</h2>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Los items del carrito se cargarán dinámicamente aquí -->
+        </div>
+        <div class="cart-total">
+            Total: $<span id="cart-total">0</span>
+        </div>
+        <button class="cta-button" id="whatsapp-order">Completar Pedido por WhatsApp</button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
