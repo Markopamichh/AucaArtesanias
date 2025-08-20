@@ -5,28 +5,35 @@ const products = [
         name: "Porta Sahumerios Artesanal",
         price: 1500,
         description: "Elegante porta sahumerios elaborado a mano con materiales naturales",
-        image: "assets/images/porta-sahumerio.webp"
+        image: "assets/images/portasahumerio.jpg"
     },
     {
         id: 2,
         name: "Porta Celular",
         price: 1800,
         description: "Porta sahumerios de cerámica con acabados rústicos",
-        image: "assets/images/portacelular.webp"
+        image: "assets/images/portacelular.jpg"
     },
     {
         id: 3,
         name: "Difusor",
         price: 2000,
         description: "Diseño único de porta sahumerios con detalles artesanales",
-        image: "assets/images/difusor.png"
+        image: "assets/images/difusor.jpg"
     },
     {
         id: 4,
-        name: "",
+        name: "Lampara de Sal",
         price: 2200,
         description: "Porta sahumerios con diseño especial y acabados premium",
-        image: "assets/images/porta-sahumerio.webp"
+        image: "assets/images/lamparadesal.jpg"
+    },
+    {
+        id: 5,
+        name: "Abanico Artesanal",
+        price: 2200,
+        description: "Porta sahumerios con diseño especial y acabados premium",
+        image: "assets/images/abanicos.jpg"
     }
 ];
 
@@ -54,7 +61,7 @@ function displayProducts() {
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <p class="product-price">$${product.price}</p>
-                <button class="cta-button" onclick="addToCart(${product.id})">Add to Cart</button>
+                <button class="cta-button" onclick="addToCart(${product.id})">Agregar al Carrito</button>
             </div>
         </div>
     `).join('');
