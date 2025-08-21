@@ -162,6 +162,45 @@
             color: var(--primary-color);
         }
 
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background-color: white;
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--background-color);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-box i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-box h3 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -182,10 +221,52 @@
             transform: translateY(-5px);
         }
 
-        .product-image {
+        .product-carousel {
+            position: relative;
             width: 100%;
-            height: 200px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .product-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .product-image.active {
+            opacity: 1;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: white;
         }
 
         .product-info {

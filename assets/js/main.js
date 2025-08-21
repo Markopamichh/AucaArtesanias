@@ -5,35 +5,56 @@ const products = [
         name: "Porta Sahumerios Artesanal",
         price: 1500,
         description: "Elegante porta sahumerios elaborado a mano con materiales naturales",
-        image: "assets/images/portasahumerio.jpg"
+        images: ["assets/images/portasahumerio.jpg", "assets/images/portasahumerio2.jpg"]
     },
     {
         id: 2,
         name: "Porta Celular",
         price: 1800,
         description: "Porta sahumerios de cerámica con acabados rústicos",
-        image: "assets/images/portacelular.jpg"
+        images: ["assets/images/portacelular.jpg", "assets/images/portacelular.webp"]
     },
     {
         id: 3,
         name: "Difusor",
         price: 2000,
         description: "Diseño único de porta sahumerios con detalles artesanales",
-        image: "assets/images/difusor.jpg"
+        images: ["assets/images/difusor.jpg", "assets/images/difusor3.jpg"]
     },
     {
         id: 4,
         name: "Lampara de Sal",
         price: 2200,
         description: "Porta sahumerios con diseño especial y acabados premium",
-        image: "assets/images/lamparadesal.jpg"
+        images: ["assets/images/lamparadesal.jpg", "assets/images/lamparadesal2.jpg"]
     },
     {
         id: 5,
         name: "Abanico Artesanal",
         price: 2200,
         description: "Porta sahumerios con diseño especial y acabados premium",
-        image: "assets/images/abanicos.jpg"
+        images: ["assets/images/abanicos.jpg", "assets/images/abanico2.jpg"]
+    },
+    {
+        id: 6,
+        name: "Caja de Te",
+        price: 2200,
+        description: "Porta sahumerios con diseño especial y acabados premium",
+        images: ["assets/images/cajadete.jpg", "assets/images/cajdeteabierta.jpg"]
+    },
+    {
+        id: 7,
+        name: "Caja de Te Grande",
+        price: 2200,
+        description: "Porta sahumerios con diseño especial y acabados premium",
+        images: ["assets/images/cajadetebrande.jpg", "assets/images/cajadetegrande.jpg"]
+    },
+    {
+        id: 8,
+        name: "Fanal para Velas",
+        price: 2200,
+        description: "Porta sahumerios con diseño especial y acabados premium",
+        images: ["assets/images/fanal1.jpg", "assets/images/fanal2.webp"]
     }
 ];
 
@@ -56,7 +77,16 @@ const closeCartBtn = document.getElementById('close-cart');
 function displayProducts() {
     productsContainer.innerHTML = products.map(product => `
         <div class="product-card">
-            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <div class="product-carousel" data-product-id="${product.id}">
+                <div class="carousel-container">
+                    <img src="${product.images[0]}" alt="${product.name}" class="product-image active">
+                    <img src="${product.images[1]}" alt="${product.name}" class="product-image">
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                </div>
+            </div>
             <div class="product-info">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
@@ -133,7 +163,7 @@ function generateWhatsAppMessage() {
     
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    return `Hola que tal? Me gustaria encargar estos productos \n\n${items}\n\n*Total: $${total}*`;
+    return `¡Holaa! Me interesa comprar estos productos \n\n${items}\n\n*Total: $${total}*`;
 }
 
 // Mobile menu toggle
@@ -195,6 +225,39 @@ ${message}`;
     alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar la consulta.');
 }
 
+// Carousel functionality
+function initCarousels() {
+    document.querySelectorAll('.product-carousel').forEach(carousel => {
+        const images = carousel.querySelectorAll('.product-image');
+        const dots = carousel.querySelectorAll('.dot');
+        let currentIndex = 0;
+
+        // Handle dot clicks
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.dataset.index);
+                showImage(index);
+            });
+        });
+
+        // Handle image clicks
+        carousel.addEventListener('click', () => {
+            const nextIndex = (currentIndex + 1) % images.length;
+            showImage(nextIndex);
+        });
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            images[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+    });
+}
+
 // Initialize
 displayProducts();
+initCarousels();
 updateCart();
