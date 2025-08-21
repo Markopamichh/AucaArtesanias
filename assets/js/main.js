@@ -217,12 +217,20 @@ Email: ${email}
 Mensaje:
 ${message}`;
 
-    // Abrir el cliente de correo del usuario
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=artesaniasauca@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+    // Intentar detectar si es dispositivo móvil
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // En móviles, usar mailto: que abrirá la app de correo predeterminada
+        window.location.href = `mailto:artesaniasauca@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    } else {
+        // En desktop, abrir Gmail en una nueva pestaña
+        window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=artesaniasauca@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+    }
     
     // Limpiar el formulario
     document.getElementById('contactForm').reset();
-    alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar la consulta.');
+    alert('¡Gracias por tu mensaje! Se abrirá tu aplicación de correo para enviar la consulta.');
 }
 
 // Carousel functionality
