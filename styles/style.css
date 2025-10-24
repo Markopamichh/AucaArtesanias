@@ -304,7 +304,8 @@
             color: var(--primary-color);
         }
         .contact-info p {
-            font-size: 1rem;
+            width: 100%;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             color: var(--text-color);
         }

@@ -5,14 +5,14 @@ const products = [
         name: "Porta Sahumerios Artesanal",
         price: 1500,
         description: "Elegante porta sahumerios elaborado a mano con materiales naturales",
-        images: ["assets/images/portasahumerio.jpg", "assets/images/portasahumerio2.jpg"]
+        images: ["assets/images/portasahumerio.jpg", "assets/images/portasahumerio2IA.jpg"]
     },
     {
         id: 2,
         name: "Porta Celular",
         price: 1800,
         description: "Porta sahumerios de cerámica con acabados rústicos",
-        images: ["assets/images/portacelular.jpg", "assets/images/portacelular.webp"]
+        images: ["assets/images/portacelular.jpg", "assets/images/portacelular2.jpg"]
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ const products = [
         name: "Abanico Artesanal",
         price: 2200,
         description: "Porta sahumerios con diseño especial y acabados premium",
-        images: ["assets/images/abanicos.jpg", "assets/images/abanico2.jpg"]
+        images: ["assets/images/abanicoIA.png", "assets/images/abanicos.jpg"]
     },
     {
         id: 6,
@@ -47,14 +47,14 @@ const products = [
         name: "Caja de Te Grande",
         price: 2200,
         description: "Porta sahumerios con diseño especial y acabados premium",
-        images: ["assets/images/cajadetebrande.jpg", "assets/images/cajadetegrande.jpg"]
+        images: ["assets/images/cajadeteIA.jpg", "assets/images/cajadetebrande.jpg"]
     },
     {
         id: 8,
         name: "Fanal para Velas",
         price: 2200,
         description: "Porta sahumerios con diseño especial y acabados premium",
-        images: ["assets/images/fanal1.jpg", "assets/images/fanal2.webp"]
+        images: ["assets/images/fanal1.jpg", "assets/images/portavela.jpg"]
     }
 ];
 
